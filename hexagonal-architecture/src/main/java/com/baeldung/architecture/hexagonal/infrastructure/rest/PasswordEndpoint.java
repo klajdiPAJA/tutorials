@@ -1,7 +1,8 @@
 package com.baeldung.architecture.hexagonal.infrastructure.rest;
 
-import com.baeldung.architecture.hexagonal.infrastructure.dto.PasswordDto;
 import org.springframework.web.bind.annotation.*;
+
+import com.baeldung.architecture.hexagonal.infrastructure.dto.PasswordDto;
 
 @RequestMapping("password")
 public interface PasswordEndpoint {

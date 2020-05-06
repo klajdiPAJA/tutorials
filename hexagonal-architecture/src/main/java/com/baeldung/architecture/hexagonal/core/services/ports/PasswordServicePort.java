@@ -4,5 +4,6 @@ import com.baeldung.architecture.hexagonal.infrastructure.dto.PasswordDto;
 
 public interface PasswordServicePort {
     void update(PasswordDto password);
+
     void reset(Long id);
 }

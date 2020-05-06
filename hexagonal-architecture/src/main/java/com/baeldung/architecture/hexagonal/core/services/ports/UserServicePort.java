@@ -4,5 +4,6 @@ import com.baeldung.architecture.hexagonal.core.domain.User;
 
 public interface UserServicePort {
     void save(User user);
+
     User get(Long id);
 }

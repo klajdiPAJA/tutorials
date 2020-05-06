@@ -1,10 +1,11 @@
 package com.baeldung.architecture.hexagonal.infrastructure.rest;
 
+import org.springframework.web.bind.annotation.RestController;
 
 import com.baeldung.architecture.hexagonal.core.domain.User;
 import com.baeldung.architecture.hexagonal.core.services.ports.UserServicePort;
+
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor

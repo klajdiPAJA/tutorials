@@ -1,7 +1,8 @@
 package com.baeldung.architecture.hexagonal.infrastructure.rest;
 
-import com.baeldung.architecture.hexagonal.core.domain.User;
 import org.springframework.web.bind.annotation.*;
+
+import com.baeldung.architecture.hexagonal.core.domain.User;
 
 @RequestMapping("user")
 public interface UserEndpoint {

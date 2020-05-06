@@ -1,17 +1,19 @@
 package com.baeldung.architecture.hexagonal.core.services.adapters;
 
-import com.baeldung.architecture.hexagonal.core.domain.User;
-import com.baeldung.architecture.hexagonal.core.services.ports.UserServicePort;
-import com.baeldung.architecture.hexagonal.infrastructure.db.UserRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 
+import org.springframework.stereotype.Service;
+
+import com.baeldung.architecture.hexagonal.core.domain.User;
+import com.baeldung.architecture.hexagonal.core.services.ports.UserServicePort;
+import com.baeldung.architecture.hexagonal.infrastructure.db.UserRepository;
+
+import lombok.RequiredArgsConstructor;
+
 @Service
 @RequiredArgsConstructor
-public class UserServiceAdapter implements UserServicePort {
+public class UserService implements UserServicePort {
     final UserRepository userRepository;
 
     @Override
@@ -23,10 +25,12 @@ public class UserServiceAdapter implements UserServicePort {
 
     @Override
     public User get(Long id) {
-        return userRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+        return userRepository.findById(id)
+            .orElseThrow(EntityNotFoundException::new);
     }
 
-    public boolean usernameExists(String username) {
-        return userRepository.findByNameEquals(username).isPresent();
+    private boolean usernameExists(String username) {
+        return userRepository.findByNameEquals(username)
+            .isPresent();
     }
 }
